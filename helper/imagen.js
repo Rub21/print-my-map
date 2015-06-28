@@ -9,19 +9,22 @@ var download = require('./download');
 var concat = require('concat-stream');
 var gm = require('gm');
 var exec = require('child_process').exec;
+var _ = require('underscore');
 
 module.exports = function(obj_tiles) {
 
 	console.log(obj_tiles);
-	async.series([download_img, process], function() {
-		console.log('fin')
-	});
+	// async.series([download_img, process], function() {
+	// 	console.log('fin')
+	// });
 
-	function download_img(done) { //done=callback
-		download(obj_tiles, done);
+	function download_img() { //done=callback
+		download(obj_tiles, process);
 	}
 
-	function process() {
+	function process(flag) {
+		console.log(flag)
+		console.log("5555555555555555555555555555555")
 		var tiles = obj_tiles.tiles;
 		var folder = os.tmpDir();
 
@@ -32,18 +35,27 @@ module.exports = function(obj_tiles) {
 			horizontal.push(tile[1]);
 		});
 
-		for (var i = 0; i < vertical.length; i++) {
-			var convert = 'convert -append ' + folder + vertical[i] + '-* ' + folder + vertical[i] + '.png';
-			console.log(convert)
-			exec(convert, function(err, stdout, stderr) {});
-		};
+		vertical = _.uniq(vertical)
+		horizontal = _.uniq(horizontal)
+		setTimeout(function() {
+			for (var i = 0; i < vertical.length; i++) {
+				var dir = folder + '/' + vertical[i];
+				var convert = 'convert -append ' + dir + '-* ' + dir + '.png && rm ' + dir + '-*';
+				console.log(convert)
+				exec(convert, function(err, stdout, stderr) {});
+			};
 
-		var convert_all = 'convert +append ' + folder + '*.png';
-		convert.log(convert_all)
-		exec(convert_all, function(err, stdout, stderr) {});
+			setTimeout(function() {
+				var convert_all = 'convert +append ' + folder + '/*.png ' + folder + '/result.png'
+				console.log(convert_all)
+				exec(convert_all, function(err, stdout, stderr) {});
+			}, 500);
 
+		}, 2000);
 
 	}
+
+	download_img();
 
 
 }
