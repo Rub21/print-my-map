@@ -5,6 +5,15 @@ L.mapbox.accessToken = token;
 var map = L.mapbox.map('map', mapid)
     .setView([38.88995, -77.00906], 15);
 
+var geojson = {
+    "type": "Feature",
+    "properties": {
+        "mapid": mapid,
+        "token": token,
+        "zoom": 0
+    },
+    "geometry": {}
+};
 
 var host = 'localhost';
 var hash = L.hash(map);
@@ -36,16 +45,19 @@ var drawControl = new L.Control.Draw({
 }).addTo(map);
 map.on('draw:created', function(e) {
     var layer = e.layer;
-    console.log( L.GeometryUtil.geodesicArea(layer.getLatLngs()))
     featureGroup.addLayer(layer);
 
-    var json = e.layer.toGeoJSON();
+    geojson.geometry = e.layer.toGeoJSON().geometry;
 
-    json.properties.mapid = mapid;
-    json.properties.token = token;
-    json.properties.zoom =  map.getZoom();
-    console.log(json)
-    document.getElementById('coordinates').innerHTML = JSON.stringify(json);
+    geojson.properties.mapid = mapid;
+    geojson.properties.token = token;
+    geojson.properties.zoom = map.getZoom();
+    console.log(geojson);
+    document.getElementById('coordinates').innerHTML = JSON.stringify(geojson);
+});
 
-
+map.on('zoomend', function() {
+    geojson.properties.zoom = map.getZoom();
+    console.log(geojson);
+    document.getElementById('coordinates').innerHTML = JSON.stringify(geojson);
 });

@@ -22,14 +22,7 @@ router.post('/process', function(req, res) {
 	jsonbody(req, res, function(err, body) {
 		if (err) return fail(err, res);
 		var json = body.json;
-
 		var zoom = json.properties.zoom;
-		var mapid = json.properties.mapid;
-		var token = json.properties.token;
-
-		//var bbox = _.union(json.geometry.coordinates[0][1], json.geometry.coordinates[0][3]); //[xLow, yLow, xHigh, yHigh]
-		//var tile = tilebelt.bboxToTile(bbox); // x,y,z
-
 		var limits = {
 			min_zoom: zoom,
 			max_zoom: zoom
@@ -38,27 +31,12 @@ router.post('/process', function(req, res) {
 		var tiles = tilecover.tiles(json.geometry, limits);
 		var json_tiles = tilecover.geojson(json.geometry, limits);
 
-
-
-		console.log(polygonArea(json.geometry));
-		console.log("+++++++++++++++++++")
-		_.each(json_tiles.features, function(tile) {
-			console.log(polygonArea(tile.geometry));
-		});
-
-
-
-		// _.each(tiles, function(tile) {
-		// 	var url = 'http://a.tiles.mapbox.com/v4/' + mapid + '/' + tile[2] +
-		// 		'/' + tile[0] +
-		// 		'/' + tile[1] +
-		// 		'.png?access_token=' + token;
-
-		// 	console.log(url);
-		// });
-
-
-
+		var obj_tiles = {
+			mapid: json.properties.mapid,
+			token: json.properties.token,
+			tiles: tiles
+		}
+		helper.converttiles(obj_tiles);
 	});
 
 
@@ -115,7 +93,5 @@ function polygonArea(geom) {
 	}
 	return area / 2;
 }
-
-
 
 module.exports = onRequest
