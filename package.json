@@ -4,7 +4,7 @@
   "description": "record ",
   "main": "server.js",
   "scripts": {
-    "start": "browserify app.js -o ./public/bundle.js & node server.js"
+    "start": "browserify index.js -o ./public/bundle.js & node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,14 @@
     "concat-stream": "^1.4.8",
     "course": "0.0.1",
     "data-uri-to-buffer": "0.0.3",
+    "gm": "^1.18.1",
     "jquery": "2.1.1",
     "leaflet-image": "^0.1.0",
     "mapbox.js": "^2.1.4",
     "st": "^0.5.4",
-    "underscore": "1.4.x",
+    "tile-cover": "^2.4.1",
+    "tilebelt": "^0.7.1",
+    "underscore": "^1.4.4",
     "uuid": "^2.0.1",
     "webrtc2images": "^1.4.4",
     "xhr": "^2.0.1"
