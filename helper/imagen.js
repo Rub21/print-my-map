@@ -8,6 +8,7 @@ var EventEmitter = require('events').EventEmitter;
 var download = require('./download');
 var concat = require('concat-stream');
 var gm = require('gm');
+var exec = require('child_process').exec;
 
 module.exports = function(obj_tiles) {
 
@@ -20,21 +21,27 @@ module.exports = function(obj_tiles) {
 		download(obj_tiles, done);
 	}
 
-	function process(flag) {
+	function process() {
+		var tiles = obj_tiles.tiles;
+		var folder = os.tmpDir();
 
-		setTimeout(function() {
-			var tiles = obj_tiles.tiles;
-			var folder = os.tmpDir();
+		var vertical = []
+		var horizontal = []
+		_.each(tiles, function(tile, key) {
+			vertical.push(tile[0]);
+			horizontal.push(tile[1]);
+		});
 
-			_.each(tiles, function(tile, key) {
-				var baseName = key + '.png';
-				var fileSrc = path.join(folder, baseName);
-				gm(fileSrc).append(fileSrc, true)
+		for (var i = 0; i < vertical.length; i++) {
+			var convert = 'convert -append ' + folder + vertical[i] + '-* ' + folder + vertical[i] + '.png';
+			console.log(convert)
+			exec(convert, function(err, stdout, stderr) {});
+		};
 
-			});
+		var convert_all = 'convert +append ' + folder + '*.png';
+		convert.log(convert_all)
+		exec(convert_all, function(err, stdout, stderr) {});
 
-			done;
-		}, 4000);
 
 	}
 
