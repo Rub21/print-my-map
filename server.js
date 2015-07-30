@@ -11,5 +11,5 @@ server.on('listening', onListening);
 server.listen(port)
 
 function onListening() {
-	console.log('Server running in port' + port);
+	console.log('Server running in port ' + port);
 }

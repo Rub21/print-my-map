@@ -1,4 +1,4 @@
-var mapid = 'ruben.mfmld567';
+var mapid = 'ruben.m3ag4lf8';
 var token = 'pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmHeqqvtFdYig';
 L.mapbox.accessToken = token;
 

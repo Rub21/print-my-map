@@ -3,13 +3,21 @@
 var path = require('path');
 var course = require('course');
 var st = require('st');
+var fs = require('fs');
+//var jsts = require("jsts");
 var tilebelt = require('tilebelt');
 var tilecover = require('tile-cover');
+var geojsonArea = require('geojson-area');
+//var distance = require('turf-distance');
+
+
+var t = require('turf');
+
 
 var _ = require('underscore');
 var jsonbody = require('body/json');
 var helper = require('../helper');
-
+var measure = require('../helper/measures')
 
 var router = course();
 var mount = st({
@@ -36,9 +44,33 @@ router.post('/process', function(req, res) {
 			token: json.properties.token,
 			tiles: tiles
 		}
-		helper.converttiles(obj_tiles);
-	});
 
+		var height_width_geo = measure(json);
+		var geojson_tiles = t.bboxPolygon(t.extent(json_tiles));
+		var height_width_geo_tiles = measure(geojson_tiles).reverse();
+
+
+		//para las dimenciones que hace falta cortar
+
+		var p1 = t.point(json.geometry.coordinates[0][0]);
+		var p2 = t.point(geojson_tiles.geometry.coordinates[0][0])
+		var input = {
+			"type": "FeatureCollection",
+			"features": []
+		}
+		input.features.push(p1);
+		input.features.push(p2);
+		var bbox = t.extent(input);
+		var height_width_nim_poly = measure(t.bboxPolygon(bbox));
+
+		fs.appendFile('json_tiles.js', JSON.stringify(t.bboxPolygon(bbox)));
+
+		console.log(height_width_geo)
+		console.log(height_width_geo_tiles)
+		console.log(height_width_nim_poly)
+
+		helper.converttiles(obj_tiles, height_width_geo, height_width_geo_tiles, height_width_nim_poly);
+	});
 
 
 });
@@ -63,35 +95,5 @@ function fail(err, res) {
 	res.end(err.message);
 }
 
-
-function long2tile(lon, zoom) {
-	return (Math.floor((lon + 180) / 360 * Math.pow(2, zoom)));
-}
-
-function lat2tile(lat, zoom) {
-	return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
-}
-
-
-function polygonArea(geom) {
-
-	geom = geom.coordinates[0];
-	var numPoints = geom.length
-	console.log(geom)
-	var X = [];
-	var Y = [];
-	for (var i = 0; i < geom.length; i++) {
-		X.push(geom[i][0])
-		Y.push(geom[i][1])
-
-	};
-	var area = 0;
-	var j = numPoints - 1;
-	for (i = 0; i < numPoints; i++) {
-		area = area + (X[j] + X[i]) * (Y[j] - Y[i]);
-		j = i;
-	}
-	return area / 2;
-}
 
 module.exports = onRequest

@@ -25,14 +25,15 @@ module.exports = function(obj_tiles, done) {
 			if (resp.statusCode === 200) {
 				var localStream = fs.createWriteStream(fileSrc);
 				out.pipe(localStream);
-				localStream.on('close', function() {});
-				console.log('done dowload' + fileSrc);
-				if (key === tiles.length - 1) {
-					console.log("iguales key ")
-					done(true)
-				}
+				localStream.on('close', function() {
+					if (key === tiles.length - 1) {
+						done(true)
+					}
+				});
+
 			}
 		});
+
 		// out.on('end', function() {
 		// 	console.log("np ")
 
