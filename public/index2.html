@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>print my map</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+    </head>
+    <body>
+
+        <canvas width="1000" height="1000" id="canvas"></canvas>
+
+        <script >
+        	
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+// var img1 = loadImage('http://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png', main);
+// var img2 = loadImage('http://introcs.cs.princeton.edu/java/31datatype/peppers.jpg', main);
+
+ var img1 = loadImage('http://a.tiles.mapbox.com/v4/bobbysud.lff263ph/17/29470/58262.png?access_token=pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmHeqqvtFdYig', main);
+ var img2 = loadImage('http://b.tiles.mapbox.com/v4/bobbysud.lff263ph/17/29463/58262.png?access_token=pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmHeqqvtFdYig', main);
+
+
+var imagesLoaded = 0;
+function main() {
+    imagesLoaded += 1;
+
+    if(imagesLoaded == 2) {
+        // composite now
+        ctx.drawImage(img1, 0, 0);
+        
+       // ctx.globalAlpha = 0.5;
+        ctx.drawImage(img2, 400, 300);
+    }
+}
+
+function loadImage(src, onload) {
+    // http://www.thefutureoftheweb.com/blog/image-onload-isnt-being-called
+    var img = new Image();
+    
+    img.onload = onload;
+    img.src = src;
+
+    return img;
+}
+
+        </script>
+</body>
+</html>

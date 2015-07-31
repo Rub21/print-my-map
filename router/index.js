@@ -4,19 +4,14 @@ var path = require('path');
 var course = require('course');
 var st = require('st');
 var fs = require('fs');
-//var jsts = require("jsts");
 var tilebelt = require('tilebelt');
 var tilecover = require('tile-cover');
 var geojsonArea = require('geojson-area');
-//var distance = require('turf-distance');
-
-
 var t = require('turf');
-
-
 var _ = require('underscore');
 var jsonbody = require('body/json');
-var helper = require('../helper');
+
+
 var measure = require('../helper/measures')
 
 var router = course();
@@ -64,7 +59,7 @@ router.post('/process', function(req, res) {
 		var height_width_nim_poly = measure(t.bboxPolygon(bbox));
 
 		fs.appendFile('json_tiles.js', JSON.stringify(t.bboxPolygon(bbox)));
-
+		
 		console.log(height_width_geo)
 		console.log(height_width_geo_tiles)
 		console.log(height_width_nim_poly)

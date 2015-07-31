@@ -4,7 +4,7 @@
   "description": "record ",
   "main": "server.js",
   "scripts": {
-    "start": "browserify index.js -o ./public/bundle.js & node server.js"
+    "start": "browserify index.js -o ./public/bundle.js & serve public/"
   },
   "repository": {
     "type": "git",

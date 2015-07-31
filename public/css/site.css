@@ -5,8 +5,9 @@ body {
 #map {
     position: absolute;
     top: 0;
+    left: 0;
     bottom: 0;
-    width: 100%
+    width: 50%
 }
 .info {
     background: #fff;
@@ -55,9 +56,9 @@ body {
 .menu-ui a.active:hover {
     background: #3074a4
 }
-.coordinates {
-    position: absolute;
-    z-index: 9999
+#coordinates {
+
+    display:none;
 }
 #butto_imagen {
     position: absolute;
@@ -92,4 +93,13 @@ body {
 position: absolute;
 z-index: 99999;
 float: right
+}
+
+
+#canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%
 }

@@ -1,4 +1,4 @@
-var mapid = 'ruben.m3ag4lf8';
+var mapid = 'bobbysud.lff1o1c6';
 var token = 'pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmHeqqvtFdYig';
 L.mapbox.accessToken = token;
 
@@ -58,6 +58,6 @@ map.on('draw:created', function(e) {
 
 map.on('zoomend', function() {
     geojson.properties.zoom = map.getZoom();
-    console.log(geojson);
+    // console.log(geojson);
     document.getElementById('coordinates').innerHTML = JSON.stringify(geojson);
 });
