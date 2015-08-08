@@ -9,7 +9,7 @@ body {
     bottom: 0;
     width: 50%
 }
-.info {
+/*.info {
     background: #fff;
     position: absolute;
     z-index: 9999;
@@ -55,12 +55,12 @@ body {
 }
 .menu-ui a.active:hover {
     background: #3074a4
-}
+}*/
 #coordinates {
 
     display:none;
 }
-#butto_imagen {
+/*#butto_imagen {
     position: absolute;
     z-index: 999;
     left: 60px;
@@ -87,14 +87,21 @@ body {
     background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
     background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#a5b8da, endColorstr=#7089b3)
-}
-}
+}*/
+
 #images {
 position: absolute;
 z-index: 99999;
 float: right
 }
 
+#canvas_result{
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    right: 0;
+    width: 50%
+}
 
 #canvas {
     position: absolute;
@@ -102,4 +109,10 @@ float: right
     bottom: 0;
     right: 0;
     width: 50%
+}
+
+
+
+.ts{
+    left: 60px;
 }

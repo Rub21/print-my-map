@@ -1,37 +1,661 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/iojs', '/usr/local/bin/npm', 'start' ]
+1 verbose cli [ '/usr/local/bin/iojs',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'canvas',
+1 verbose cli   '--save' ]
 2 info using npm@2.11.0
 3 info using node@v2.2.1
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart record-vid@0.0.0
-6 info start record-vid@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info record-vid@0.0.0 Failed to exec start script
-9 verbose stack Error: record-vid@0.0.0 start: `browserify index.js -o ./public/bundle.js & node server.js`
-9 verbose stack Exit status 8
-9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at EventEmitter.emit (events.js:172:7)
-9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at ChildProcess.emit (events.js:172:7)
-9 verbose stack     at maybeClose (internal/child_process.js:763:16)
-9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:210:5)
-10 verbose pkgid record-vid@0.0.0
-11 verbose cwd /home/ruben/apps/print-my-map
-12 error Linux 3.13.0-57-generic
-13 error argv "/usr/local/bin/iojs" "/usr/local/bin/npm" "start"
-14 error node v2.2.1
-15 error npm  v2.11.0
-16 error code ELIFECYCLE
-17 error record-vid@0.0.0 start: `browserify index.js -o ./public/bundle.js & node server.js`
-17 error Exit status 8
-18 error Failed at the record-vid@0.0.0 start script 'browserify index.js -o ./public/bundle.js & node server.js'.
-18 error This is most likely a problem with the record-vid package,
-18 error not with npm itself.
-18 error Tell the author that this fails on your system:
-18 error     browserify index.js -o ./public/bundle.js & node server.js
-18 error You can get their info via:
-18 error     npm owner ls record-vid
-18 error There is likely additional logging output above.
-19 verbose exit [ 1, true ]
+4 verbose install initial load of /home/ruben/apps/print-my-map/package.json
+5 warn package.json record-vid@0.0.0 No README data
+6 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/async/package.json
+7 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/body/package.json
+8 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/browserify/package.json
+9 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/canvas/package.json
+10 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/concat-stream/package.json
+11 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/course/package.json
+12 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/data-uri-to-buffer/package.json
+13 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/domify/package.json
+14 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/domready/package.json
+15 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/easyimage/package.json
+16 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/geojson-area/package.json
+17 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/gm/package.json
+18 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/handlebars/package.json
+19 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/hbsfy/package.json
+20 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/jquery/package.json
+21 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/jsts/package.json
+22 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/leaflet-draw/package.json
+23 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/leaflet-image/package.json
+24 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/level/package.json
+25 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/mapbox.js/package.json
+26 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/mapslice/package.json
+27 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/phantom/package.json
+28 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/png-js/package.json
+29 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/request/package.json
+30 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/socket.io/package.json
+31 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/socket.io-client/package.json
+32 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/st/package.json
+33 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/tile-cover/package.json
+34 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/tilebelt/package.json
+35 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/tufu/package.json
+36 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/turf/package.json
+37 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/turf-distance/package.json
+38 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/underscore/package.json
+39 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/url/package.json
+40 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/uuid/package.json
+41 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/webpage/package.json
+42 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/webrtc2images/package.json
+43 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/webshot/package.json
+44 verbose installManyTop reading scoped package data from /home/ruben/apps/print-my-map/node_modules/xhr/package.json
+45 info package.json body@5.0.0 No license field.
+46 info package.json jquery@2.1.1 No license field.
+47 info package.json jsts@0.16.0 No license field.
+48 info package.json mapbox.js@2.2.1 No license field.
+49 info package.json png-js@0.1.1 No license field.
+50 info package.json underscore@1.4.4 No license field.
+51 info package.json uuid@2.0.1 No license field.
+52 info package.json url@0.10.3 url is also the name of a node core module.
+53 info package.json xhr@2.0.1 No license field.
+54 info package.json domready@1.0.8 No license field.
+55 info package.json easyimage@2.0.3 No license field.
+56 info package.json domify@1.3.3 No license field.
+57 info package.json leaflet-draw@0.2.3 license should be a valid SPDX license expression
+58 info package.json phantom@0.7.2 No license field.
+59 info package.json socket.io@1.3.5 No license field.
+60 info package.json tufu@0.1.1 license should be a valid SPDX license expression
+61 info package.json webpage@0.3.0 No repository field.
+62 verbose readDependencies loading dependencies from /home/ruben/apps/print-my-map/package.json
+63 verbose install canvas is installed as 1.2.3
+64 silly cache add args [ 'canvas', null ]
+65 verbose cache add spec canvas
+66 silly cache add parsed spec { raw: 'canvas',
+66 silly cache add   scope: null,
+66 silly cache add   name: 'canvas',
+66 silly cache add   rawSpec: '',
+66 silly cache add   spec: '*',
+66 silly cache add   type: 'range' }
+67 silly addNamed canvas@*
+68 verbose addNamed "*" is a valid semver range for canvas
+69 silly addNameRange { name: 'canvas', range: '*', hasData: false }
+70 silly mapToRegistry name canvas
+71 silly mapToRegistry using default registry
+72 silly mapToRegistry registry https://registry.npmjs.org/
+73 silly mapToRegistry uri https://registry.npmjs.org/canvas
+74 verbose addNameRange registry:https://registry.npmjs.org/canvas not in flight; fetching
+75 verbose request uri https://registry.npmjs.org/canvas
+76 verbose request no auth needed
+77 info attempt registry request try #1 at 18:34:12
+78 verbose request id ce5a6adfaa85647b
+79 verbose etag "1E0VM74J09VH1CQCM3TU57NM4"
+80 http request GET https://registry.npmjs.org/canvas
+81 http 200 https://registry.npmjs.org/canvas
+82 silly get cb [ 200,
+82 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+82 silly get     etag: '"45Z4OG2822M36VUDW97TCINHL"',
+82 silly get     'content-type': 'application/json',
+82 silly get     'cache-control': 'max-age=60',
+82 silly get     'content-length': '74255',
+82 silly get     'accept-ranges': 'bytes',
+82 silly get     date: 'Sat, 01 Aug 2015 23:34:13 GMT',
+82 silly get     via: '1.1 varnish',
+82 silly get     age: '0',
+82 silly get     connection: 'keep-alive',
+82 silly get     'x-served-by': 'cache-jfk1029-JFK',
+82 silly get     'x-cache': 'HIT',
+82 silly get     'x-cache-hits': '1',
+82 silly get     'x-timer': 'S1438472053.407690,VS0,VE340',
+82 silly get     vary: 'Accept' } ]
+83 verbose get saving canvas to /home/ruben/.npm/registry.npmjs.org/canvas/.cache.json
+84 silly addNameRange number 2 { name: 'canvas', range: '*', hasData: true }
+85 silly addNameRange versions [ 'canvas',
+85 silly addNameRange   [ '0.0.1',
+85 silly addNameRange     '0.0.2',
+85 silly addNameRange     '0.0.3',
+85 silly addNameRange     '0.0.4',
+85 silly addNameRange     '0.0.5',
+85 silly addNameRange     '0.0.6',
+85 silly addNameRange     '0.0.7',
+85 silly addNameRange     '0.0.8',
+85 silly addNameRange     '0.1.0',
+85 silly addNameRange     '0.2.0',
+85 silly addNameRange     '0.2.1',
+85 silly addNameRange     '0.3.0',
+85 silly addNameRange     '0.3.1',
+85 silly addNameRange     '0.3.2',
+85 silly addNameRange     '0.3.3',
+85 silly addNameRange     '0.4.0',
+85 silly addNameRange     '0.4.1',
+85 silly addNameRange     '0.4.2',
+85 silly addNameRange     '0.4.3',
+85 silly addNameRange     '0.5.0',
+85 silly addNameRange     '0.5.1',
+85 silly addNameRange     '0.5.2',
+85 silly addNameRange     '0.5.3',
+85 silly addNameRange     '0.5.4',
+85 silly addNameRange     '0.6.0',
+85 silly addNameRange     '0.7.0',
+85 silly addNameRange     '0.7.1',
+85 silly addNameRange     '0.7.2',
+85 silly addNameRange     '0.7.3',
+85 silly addNameRange     '0.8.0',
+85 silly addNameRange     '0.8.1',
+85 silly addNameRange     '0.8.2',
+85 silly addNameRange     '0.8.3',
+85 silly addNameRange     '0.9.0',
+85 silly addNameRange     '0.10.0',
+85 silly addNameRange     '0.10.1',
+85 silly addNameRange     '0.10.2',
+85 silly addNameRange     '0.10.3',
+85 silly addNameRange     '0.11.0',
+85 silly addNameRange     '0.11.1',
+85 silly addNameRange     '0.11.2',
+85 silly addNameRange     '0.11.3',
+85 silly addNameRange     '0.12.0',
+85 silly addNameRange     '0.12.1',
+85 silly addNameRange     '0.13.0',
+85 silly addNameRange     '0.13.1',
+85 silly addNameRange     '1.0.0',
+85 silly addNameRange     '1.0.1',
+85 silly addNameRange     '1.0.2',
+85 silly addNameRange     '1.0.3',
+85 silly addNameRange     '1.0.4',
+85 silly addNameRange     '1.1.0',
+85 silly addNameRange     '1.1.1',
+85 silly addNameRange     '1.1.2',
+85 silly addNameRange     '1.1.3',
+85 silly addNameRange     '1.1.4',
+85 silly addNameRange     '1.1.5',
+85 silly addNameRange     '1.1.6',
+85 silly addNameRange     '1.2.0',
+85 silly addNameRange     '1.2.1',
+85 silly addNameRange     '1.2.2',
+85 silly addNameRange     '1.2.3',
+85 silly addNameRange     '1.2.4',
+85 silly addNameRange     '1.2.5',
+85 silly addNameRange     '1.2.6',
+85 silly addNameRange     '1.2.7' ] ]
+86 silly addNamed canvas@1.2.7
+87 verbose addNamed "1.2.7" is a plain semver version for canvas
+88 silly mapToRegistry name canvas
+89 silly mapToRegistry using default registry
+90 silly mapToRegistry registry https://registry.npmjs.org/
+91 silly mapToRegistry uri https://registry.npmjs.org/canvas
+92 verbose addRemoteTarball https://registry.npmjs.org/canvas/-/canvas-1.2.7.tgz not in flight; adding
+93 verbose addRemoteTarball [ 'https://registry.npmjs.org/canvas/-/canvas-1.2.7.tgz',
+93 verbose addRemoteTarball   '36ea77836fafa968a34950507fc940bdf6bd4940' ]
+94 info retry fetch attempt 1 at 18:34:14
+95 info attempt registry request try #1 at 18:34:14
+96 http fetch GET https://registry.npmjs.org/canvas/-/canvas-1.2.7.tgz
+97 http fetch 200 https://registry.npmjs.org/canvas/-/canvas-1.2.7.tgz
+98 silly fetchAndShaCheck shasum 36ea77836fafa968a34950507fc940bdf6bd4940
+99 verbose addTmpTarball /tmp/npm-11662-2bdd8ced/registry.npmjs.org/canvas/-/canvas-1.2.7.tgz not in flight; adding
+100 verbose addTmpTarball already have metadata; skipping unpack for canvas@1.2.7
+101 silly cache afterAdd canvas@1.2.7
+102 verbose afterAdd /home/ruben/.npm/canvas/1.2.7/package/package.json not in flight; writing
+103 verbose afterAdd /home/ruben/.npm/canvas/1.2.7/package/package.json written
+104 silly install resolved [ { name: 'canvas',
+104 silly install resolved     description: 'Canvas graphics API backed by Cairo',
+104 silly install resolved     version: '1.2.7',
+104 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@learnboost.com' },
+104 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+104 silly install resolved     keywords:
+104 silly install resolved      [ 'canvas',
+104 silly install resolved        'graphic',
+104 silly install resolved        'graphics',
+104 silly install resolved        'pixman',
+104 silly install resolved        'cairo',
+104 silly install resolved        'image',
+104 silly install resolved        'images',
+104 silly install resolved        'pdf' ],
+104 silly install resolved     homepage: 'https://github.com/Automattic/node-canvas',
+104 silly install resolved     repository:
+104 silly install resolved      { type: 'git',
+104 silly install resolved        url: 'git://github.com/Automattic/node-canvas.git' },
+104 silly install resolved     scripts: { test: 'make test', install: 'node-gyp rebuild' },
+104 silly install resolved     dependencies: { nan: '^1.8.4' },
+104 silly install resolved     devDependencies: { express: '3.0', jade: '0.28.1', mocha: '*', should: '*' },
+104 silly install resolved     engines: { node: '>= 0.6.0' },
+104 silly install resolved     main: './lib/canvas.js',
+104 silly install resolved     license: 'MIT',
+104 silly install resolved     gypfile: true,
+104 silly install resolved     gitHead: '46a26de488fd6d3784a53d634a1339927ea81e44',
+104 silly install resolved     bugs: { url: 'https://github.com/Automattic/node-canvas/issues' },
+104 silly install resolved     _id: 'canvas@1.2.7',
+104 silly install resolved     _shasum: '36ea77836fafa968a34950507fc940bdf6bd4940',
+104 silly install resolved     _from: 'canvas@*',
+104 silly install resolved     _npmVersion: '2.12.1',
+104 silly install resolved     _nodeVersion: '0.12.7',
+104 silly install resolved     _npmUser: { name: 'linusu', email: 'linus@folkdatorn.se' },
+104 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+104 silly install resolved     dist:
+104 silly install resolved      { shasum: '36ea77836fafa968a34950507fc940bdf6bd4940',
+104 silly install resolved        tarball: 'http://registry.npmjs.org/canvas/-/canvas-1.2.7.tgz' },
+104 silly install resolved     directories: {},
+104 silly install resolved     _resolved: 'https://registry.npmjs.org/canvas/-/canvas-1.2.7.tgz' } ]
+105 info install canvas@1.2.7 into /home/ruben/apps/print-my-map
+106 info installOne canvas@1.2.7
+107 verbose installOne of canvas to /home/ruben/apps/print-my-map not in flight; installing
+108 verbose lock using /home/ruben/.npm/_locks/canvas-95642d1364481242.lock for /home/ruben/apps/print-my-map/node_modules/canvas
+109 silly install write writing canvas 1.2.7 to /home/ruben/apps/print-my-map/node_modules/canvas
+110 verbose unbuild node_modules/canvas
+111 info preuninstall canvas@1.2.3
+112 info uninstall canvas@1.2.3
+113 verbose unbuild rmStuff canvas@1.2.3 from /home/ruben/apps/print-my-map/node_modules
+114 info postuninstall canvas@1.2.3
+115 silly gentlyRm /home/ruben/apps/print-my-map/node_modules/canvas is being purged from base /home/ruben/apps/print-my-map
+116 verbose gentlyRm don't care about contents; nuking /home/ruben/apps/print-my-map/node_modules/canvas
+117 silly vacuum-fs purging /home/ruben/apps/print-my-map/node_modules/canvas
+118 silly vacuum-fs quitting because other entries in /home/ruben/apps/print-my-map/node_modules
+119 verbose tar unpack /home/ruben/.npm/canvas/1.2.7/package.tgz
+120 verbose tar unpacking to /home/ruben/apps/print-my-map/node_modules/canvas
+121 silly gentlyRm /home/ruben/apps/print-my-map/node_modules/canvas is being purged
+122 verbose gentlyRm don't care about contents; nuking /home/ruben/apps/print-my-map/node_modules/canvas
+123 silly gunzTarPerm modes [ '775', '664' ]
+124 silly gunzTarPerm extractEntry package.json
+125 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+126 silly gunzTarPerm extractEntry .npmignore
+127 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+128 silly gunzTarPerm extractEntry index.js
+129 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+130 silly gunzTarPerm extractEntry History.md
+131 silly gunzTarPerm modified mode [ 'History.md', 420, 436 ]
+132 silly gunzTarPerm extractEntry Makefile
+133 silly gunzTarPerm modified mode [ 'Makefile', 420, 436 ]
+134 silly gunzTarPerm extractEntry Readme.md
+135 silly gunzTarPerm modified mode [ 'Readme.md', 420, 436 ]
+136 silly gunzTarPerm extractEntry binding.gyp
+137 silly gunzTarPerm modified mode [ 'binding.gyp', 493, 509 ]
+138 silly gunzTarPerm extractEntry .gitmodules
+139 silly gunzTarPerm modified mode [ '.gitmodules', 420, 436 ]
+140 silly gunzTarPerm extractEntry install
+141 silly gunzTarPerm modified mode [ 'install', 493, 509 ]
+142 silly gunzTarPerm extractEntry lib/bindings.js
+143 silly gunzTarPerm modified mode [ 'lib/bindings.js', 420, 436 ]
+144 silly gunzTarPerm extractEntry lib/canvas.js
+145 silly gunzTarPerm modified mode [ 'lib/canvas.js', 420, 436 ]
+146 silly gunzTarPerm extractEntry lib/context2d.js
+147 silly gunzTarPerm modified mode [ 'lib/context2d.js', 420, 436 ]
+148 silly gunzTarPerm extractEntry lib/image.js
+149 silly gunzTarPerm modified mode [ 'lib/image.js', 420, 436 ]
+150 silly gunzTarPerm extractEntry lib/jpegstream.js
+151 silly gunzTarPerm modified mode [ 'lib/jpegstream.js', 420, 436 ]
+152 silly gunzTarPerm extractEntry lib/pixelarray.js
+153 silly gunzTarPerm modified mode [ 'lib/pixelarray.js', 420, 436 ]
+154 silly gunzTarPerm extractEntry lib/pngstream.js
+155 silly gunzTarPerm modified mode [ 'lib/pngstream.js', 420, 436 ]
+156 silly gunzTarPerm extractEntry .travis.yml
+157 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+158 silly gunzTarPerm extractEntry src/Image.h
+159 silly gunzTarPerm modified mode [ 'src/Image.h', 420, 436 ]
+160 silly gunzTarPerm extractEntry src/Canvas.cc
+161 silly gunzTarPerm modified mode [ 'src/Canvas.cc', 420, 436 ]
+162 silly gunzTarPerm extractEntry src/CanvasGradient.cc
+163 silly gunzTarPerm modified mode [ 'src/CanvasGradient.cc', 420, 436 ]
+164 silly gunzTarPerm extractEntry src/CanvasGradient.h
+165 silly gunzTarPerm modified mode [ 'src/CanvasGradient.h', 420, 436 ]
+166 silly gunzTarPerm extractEntry src/CanvasPattern.cc
+167 silly gunzTarPerm modified mode [ 'src/CanvasPattern.cc', 420, 436 ]
+168 silly gunzTarPerm extractEntry src/CanvasPattern.h
+169 silly gunzTarPerm modified mode [ 'src/CanvasPattern.h', 420, 436 ]
+170 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.cc
+171 silly gunzTarPerm modified mode [ 'src/CanvasRenderingContext2d.cc', 493, 509 ]
+172 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.h
+173 silly gunzTarPerm modified mode [ 'src/CanvasRenderingContext2d.h', 420, 436 ]
+174 silly gunzTarPerm extractEntry src/FontFace.cc
+175 silly gunzTarPerm modified mode [ 'src/FontFace.cc', 493, 509 ]
+176 silly gunzTarPerm extractEntry src/FontFace.h
+177 silly gunzTarPerm modified mode [ 'src/FontFace.h', 420, 436 ]
+178 silly gunzTarPerm extractEntry src/Image.cc
+179 silly gunzTarPerm modified mode [ 'src/Image.cc', 420, 436 ]
+180 silly gunzTarPerm extractEntry src/Canvas.h
+181 silly gunzTarPerm modified mode [ 'src/Canvas.h', 420, 436 ]
+182 silly gunzTarPerm extractEntry src/ImageData.cc
+183 silly gunzTarPerm modified mode [ 'src/ImageData.cc', 420, 436 ]
+184 silly gunzTarPerm extractEntry src/ImageData.h
+185 silly gunzTarPerm modified mode [ 'src/ImageData.h', 420, 436 ]
+186 silly gunzTarPerm extractEntry src/JPEGStream.h
+187 silly gunzTarPerm modified mode [ 'src/JPEGStream.h', 420, 436 ]
+188 silly gunzTarPerm extractEntry src/PNG.h
+189 silly gunzTarPerm modified mode [ 'src/PNG.h', 420, 436 ]
+190 silly gunzTarPerm extractEntry src/PixelArray.cc
+191 silly gunzTarPerm modified mode [ 'src/PixelArray.cc', 420, 436 ]
+192 silly gunzTarPerm extractEntry src/PixelArray.h
+193 silly gunzTarPerm modified mode [ 'src/PixelArray.h', 420, 436 ]
+194 silly gunzTarPerm extractEntry src/Point.h
+195 silly gunzTarPerm modified mode [ 'src/Point.h', 420, 436 ]
+196 silly gunzTarPerm extractEntry src/closure.h
+197 silly gunzTarPerm modified mode [ 'src/closure.h', 420, 436 ]
+198 silly gunzTarPerm extractEntry src/color.cc
+199 silly gunzTarPerm modified mode [ 'src/color.cc', 420, 436 ]
+200 silly gunzTarPerm extractEntry src/color.h
+201 silly gunzTarPerm modified mode [ 'src/color.h', 420, 436 ]
+202 silly gunzTarPerm extractEntry src/init.cc
+203 silly gunzTarPerm modified mode [ 'src/init.cc', 493, 509 ]
+204 silly gunzTarPerm extractEntry util/cairo_include.sh
+205 silly gunzTarPerm modified mode [ 'util/cairo_include.sh', 493, 509 ]
+206 silly gunzTarPerm extractEntry util/has_cairo_freetype.sh
+207 silly gunzTarPerm modified mode [ 'util/has_cairo_freetype.sh', 493, 509 ]
+208 silly gunzTarPerm extractEntry util/has_lib.sh
+209 silly gunzTarPerm modified mode [ 'util/has_lib.sh', 493, 509 ]
+210 silly gunzTarPerm extractEntry util/lib_lookup.sh
+211 silly gunzTarPerm modified mode [ 'util/lib_lookup.sh', 493, 509 ]
+212 verbose write writing to /home/ruben/apps/print-my-map/node_modules/canvas/package.json
+213 info preinstall canvas@1.2.7
+214 verbose readDependencies loading dependencies from /home/ruben/apps/print-my-map/node_modules/canvas/package.json
+215 silly prepareForInstallMany adding nan@^1.8.4 from canvas dependencies
+216 verbose readDependencies loading dependencies from /home/ruben/apps/print-my-map/node_modules/canvas/package.json
+217 silly cache add args [ 'nan@^1.8.4', null ]
+218 verbose cache add spec nan@^1.8.4
+219 silly cache add parsed spec { raw: 'nan@^1.8.4',
+219 silly cache add   scope: null,
+219 silly cache add   name: 'nan',
+219 silly cache add   rawSpec: '^1.8.4',
+219 silly cache add   spec: '>=1.8.4 <2.0.0',
+219 silly cache add   type: 'range' }
+220 silly addNamed nan@>=1.8.4 <2.0.0
+221 verbose addNamed ">=1.8.4 <2.0.0" is a valid semver range for nan
+222 silly addNameRange { name: 'nan', range: '>=1.8.4 <2.0.0', hasData: false }
+223 silly mapToRegistry name nan
+224 silly mapToRegistry using default registry
+225 silly mapToRegistry registry https://registry.npmjs.org/
+226 silly mapToRegistry uri https://registry.npmjs.org/nan
+227 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+228 verbose request uri https://registry.npmjs.org/nan
+229 verbose request no auth needed
+230 info attempt registry request try #1 at 18:34:16
+231 verbose etag "9T2TEINHQE1CYR42PWQNCEY3X"
+232 http request GET https://registry.npmjs.org/nan
+233 http 200 https://registry.npmjs.org/nan
+234 silly get cb [ 200,
+234 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+234 silly get     etag: '"7ZNJE7CSHKCXQDJXAXFJDO4DJ"',
+234 silly get     'content-type': 'application/json',
+234 silly get     'cache-control': 'max-age=60',
+234 silly get     'content-length': '82031',
+234 silly get     'accept-ranges': 'bytes',
+234 silly get     date: 'Sat, 01 Aug 2015 23:34:17 GMT',
+234 silly get     via: '1.1 varnish',
+234 silly get     age: '4',
+234 silly get     connection: 'keep-alive',
+234 silly get     'x-served-by': 'cache-atl6235-ATL',
+234 silly get     'x-cache': 'HIT',
+234 silly get     'x-cache-hits': '1',
+234 silly get     'x-timer': 'S1438472057.859378,VS0,VE1',
+234 silly get     vary: 'Accept' } ]
+235 verbose get saving nan to /home/ruben/.npm/registry.npmjs.org/nan/.cache.json
+236 silly addNameRange number 2 { name: 'nan', range: '>=1.8.4 <2.0.0', hasData: true }
+237 silly addNameRange versions [ 'nan',
+237 silly addNameRange   [ '0.3.0-wip',
+237 silly addNameRange     '0.3.0-wip2',
+237 silly addNameRange     '0.3.0',
+237 silly addNameRange     '0.3.1',
+237 silly addNameRange     '0.3.2',
+237 silly addNameRange     '0.4.0',
+237 silly addNameRange     '0.4.1',
+237 silly addNameRange     '0.4.2',
+237 silly addNameRange     '0.4.3',
+237 silly addNameRange     '0.4.4',
+237 silly addNameRange     '0.5.0',
+237 silly addNameRange     '0.5.1',
+237 silly addNameRange     '0.5.2',
+237 silly addNameRange     '0.6.0',
+237 silly addNameRange     '0.7.0',
+237 silly addNameRange     '0.7.1',
+237 silly addNameRange     '0.8.0',
+237 silly addNameRange     '1.0.0',
+237 silly addNameRange     '1.1.0',
+237 silly addNameRange     '1.1.1',
+237 silly addNameRange     '1.1.2',
+237 silly addNameRange     '1.2.0',
+237 silly addNameRange     '1.3.0',
+237 silly addNameRange     '1.4.0',
+237 silly addNameRange     '1.4.1',
+237 silly addNameRange     '1.5.0',
+237 silly addNameRange     '1.4.2',
+237 silly addNameRange     '1.4.3',
+237 silly addNameRange     '1.5.1',
+237 silly addNameRange     '1.5.2',
+237 silly addNameRange     '1.6.0',
+237 silly addNameRange     '1.5.3',
+237 silly addNameRange     '1.6.1',
+237 silly addNameRange     '1.6.2',
+237 silly addNameRange     '1.7.0',
+237 silly addNameRange     '1.8.0',
+237 silly addNameRange     '1.8.1',
+237 silly addNameRange     '1.8.2',
+237 silly addNameRange     '1.8.3',
+237 silly addNameRange     '1.8.4',
+237 silly addNameRange     '1.9.0',
+237 silly addNameRange     '2.0.0' ] ]
+238 silly addNamed nan@1.9.0
+239 verbose addNamed "1.9.0" is a plain semver version for nan
+240 silly mapToRegistry name nan
+241 silly mapToRegistry using default registry
+242 silly mapToRegistry registry https://registry.npmjs.org/
+243 silly mapToRegistry uri https://registry.npmjs.org/nan
+244 verbose addRemoteTarball https://registry.npmjs.org/nan/-/nan-1.9.0.tgz not in flight; adding
+245 verbose addRemoteTarball [ 'https://registry.npmjs.org/nan/-/nan-1.9.0.tgz',
+245 verbose addRemoteTarball   '1a9cd2755609766f5c291e4194fce39fde286515' ]
+246 info retry fetch attempt 1 at 18:34:18
+247 info attempt registry request try #1 at 18:34:18
+248 http fetch GET https://registry.npmjs.org/nan/-/nan-1.9.0.tgz
+249 http fetch 200 https://registry.npmjs.org/nan/-/nan-1.9.0.tgz
+250 silly fetchAndShaCheck shasum 1a9cd2755609766f5c291e4194fce39fde286515
+251 verbose addTmpTarball /tmp/npm-11662-2bdd8ced/registry.npmjs.org/nan/-/nan-1.9.0.tgz not in flight; adding
+252 verbose addTmpTarball already have metadata; skipping unpack for nan@1.9.0
+253 silly cache afterAdd nan@1.9.0
+254 verbose afterAdd /home/ruben/.npm/nan/1.9.0/package/package.json not in flight; writing
+255 verbose afterAdd /home/ruben/.npm/nan/1.9.0/package/package.json written
+256 silly install resolved [ { name: 'nan',
+256 silly install resolved     version: '1.9.0',
+256 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+256 silly install resolved     main: 'include_dirs.js',
+256 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+256 silly install resolved     scripts:
+256 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+256 silly install resolved        'rebuild-tests': 'pangyp rebuild --msvs_version=2013 --directory test' },
+256 silly install resolved     contributors:
+256 silly install resolved      [ [Object],
+256 silly install resolved        [Object],
+256 silly install resolved        [Object],
+256 silly install resolved        [Object],
+256 silly install resolved        [Object],
+256 silly install resolved        [Object],
+256 silly install resolved        [Object] ],
+256 silly install resolved     devDependencies:
+256 silly install resolved      { bindings: '~1.2.1',
+256 silly install resolved        'node-gyp': '~2.0.2',
+256 silly install resolved        pangyp: '~2.2.0',
+256 silly install resolved        tap: '~0.7.1',
+256 silly install resolved        xtend: '~4.0.0' },
+256 silly install resolved     license: 'MIT',
+256 silly install resolved     gitHead: '399b3a54ada39a7cf7a11978ea727eae3686666e',
+256 silly install resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+256 silly install resolved     homepage: 'https://github.com/nodejs/nan#readme',
+256 silly install resolved     _id: 'nan@1.9.0',
+256 silly install resolved     _shasum: '1a9cd2755609766f5c291e4194fce39fde286515',
+256 silly install resolved     _from: 'nan@>=1.8.4 <2.0.0',
+256 silly install resolved     _npmVersion: '2.13.3',
+256 silly install resolved     _nodeVersion: '0.12.2',
+256 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+256 silly install resolved     maintainers: [ [Object], [Object] ],
+256 silly install resolved     dist:
+256 silly install resolved      { shasum: '1a9cd2755609766f5c291e4194fce39fde286515',
+256 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.9.0.tgz' },
+256 silly install resolved     directories: {},
+256 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.9.0.tgz' } ]
+257 info install nan@1.9.0 into /home/ruben/apps/print-my-map/node_modules/canvas
+258 info installOne nan@1.9.0
+259 verbose installOne of nan to /home/ruben/apps/print-my-map/node_modules/canvas not in flight; installing
+260 verbose lock using /home/ruben/.npm/_locks/nan-cf6d8dc5b69eda45.lock for /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+261 silly install write writing nan 1.9.0 to /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+262 verbose unbuild node_modules/canvas/node_modules/nan
+263 silly gentlyRm /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan is being purged from base /home/ruben/apps/print-my-map
+264 verbose gentlyRm don't care about contents; nuking /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+265 verbose tar unpack /home/ruben/.npm/nan/1.9.0/package.tgz
+266 verbose tar unpacking to /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+267 silly gentlyRm /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan is being purged
+268 verbose gentlyRm don't care about contents; nuking /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+269 silly gunzTarPerm modes [ '775', '664' ]
+270 silly gunzTarPerm extractEntry package.json
+271 silly gunzTarPerm extractEntry README.md
+272 silly gunzTarPerm extractEntry include_dirs.js
+273 silly gunzTarPerm extractEntry LICENSE.md
+274 silly gunzTarPerm extractEntry .dntrc
+275 silly gunzTarPerm extractEntry appveyor.yml
+276 silly gunzTarPerm extractEntry nan.h
+277 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+278 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+279 silly gunzTarPerm extractEntry nan_new.h
+280 silly gunzTarPerm extractEntry nan_string_bytes.h
+281 silly gunzTarPerm extractEntry CHANGELOG.md
+282 silly gunzTarPerm extractEntry tools/node_modules/commander/package.json
+283 silly gunzTarPerm extractEntry tools/node_modules/commander/LICENSE
+284 silly gunzTarPerm extractEntry tools/node_modules/commander/index.js
+285 silly gunzTarPerm extractEntry tools/node_modules/commander/History.md
+286 silly gunzTarPerm extractEntry tools/node_modules/commander/Readme.md
+287 silly gunzTarPerm extractEntry tools/node_modules/commander/node_modules/graceful-readlink/package.json
+288 silly gunzTarPerm extractEntry tools/node_modules/commander/node_modules/graceful-readlink/.npmignore
+289 silly gunzTarPerm extractEntry tools/node_modules/commander/node_modules/graceful-readlink/README.md
+290 silly gunzTarPerm extractEntry tools/node_modules/commander/node_modules/graceful-readlink/LICENSE
+291 silly gunzTarPerm extractEntry tools/node_modules/commander/node_modules/graceful-readlink/index.js
+292 silly gunzTarPerm extractEntry tools/node_modules/commander/node_modules/graceful-readlink/.travis.yml
+293 silly gunzTarPerm extractEntry tools/node_modules/glob/package.json
+294 silly gunzTarPerm extractEntry tools/node_modules/glob/README.md
+295 silly gunzTarPerm extractEntry tools/node_modules/glob/LICENSE
+296 silly gunzTarPerm extractEntry tools/node_modules/glob/common.js
+297 silly gunzTarPerm extractEntry tools/node_modules/glob/glob.js
+298 silly gunzTarPerm extractEntry tools/node_modules/glob/sync.js
+299 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/package.json
+300 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/README.md
+301 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/LICENSE
+302 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/inflight.js
+303 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/test.js
+304 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/.eslintrc
+305 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/node_modules/wrappy/package.json
+306 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/node_modules/wrappy/README.md
+307 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/node_modules/wrappy/LICENSE
+308 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js
+309 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inflight/node_modules/wrappy/test/basic.js
+310 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inherits/package.json
+311 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inherits/README.md
+312 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inherits/LICENSE
+313 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inherits/inherits.js
+314 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inherits/inherits_browser.js
+315 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/inherits/test.js
+316 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/package.json
+317 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/README.md
+318 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/LICENSE
+319 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/browser.js
+320 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/minimatch.js
+321 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/package.json
+322 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/.npmignore
+323 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/README.md
+324 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/example.js
+325 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/index.js
+326 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/.travis.yml
+327 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/bash-comparison.js
+328 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/same-type.js
+329 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/dollar.js
+330 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/empty-option.js
+331 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/pad.js
+332 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/order.js
+333 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/nested.js
+334 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/sequence.js
+335 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/negative-increment.js
+336 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/bash-results.txt
+337 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/generate.sh
+338 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/test/cases.txt
+339 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/package.json
+340 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/.npmignore
+341 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/README.md
+342 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/example.js
+343 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/index.js
+344 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/.travis.yml
+345 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/Makefile
+346 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/test/balanced.js
+347 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/package.json
+348 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/LICENSE
+349 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/index.js
+350 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/.travis.yml
+351 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/README.markdown
+352 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/example/map.js
+353 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/test/map.js
+354 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/package.json
+355 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/README.md
+356 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/LICENSE
+357 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/once.js
+358 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/test/once.js
+359 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/node_modules/wrappy/package.json
+360 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/node_modules/wrappy/README.md
+361 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/node_modules/wrappy/LICENSE
+362 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/node_modules/wrappy/wrappy.js
+363 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/once/node_modules/wrappy/test/basic.js
+364 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/path-is-absolute/package.json
+365 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/path-is-absolute/index.js
+366 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/path-is-absolute/license
+367 silly gunzTarPerm extractEntry tools/node_modules/glob/node_modules/path-is-absolute/readme.md
+368 verbose write writing to /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan/package.json
+369 info preinstall nan@1.9.0
+370 verbose readDependencies loading dependencies from /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan/package.json
+371 verbose readDependencies loading dependencies from /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan/package.json
+372 silly install resolved []
+373 verbose about to build /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+374 info build /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+375 info linkStuff nan@1.9.0
+376 silly linkStuff nan@1.9.0 has /home/ruben/apps/print-my-map/node_modules/canvas/node_modules as its parent node_modules
+377 verbose linkBins nan@1.9.0
+378 verbose linkMans nan@1.9.0
+379 verbose rebuildBundles nan@1.9.0
+380 info install nan@1.9.0
+381 info postinstall nan@1.9.0
+382 verbose unlock done using /home/ruben/.npm/_locks/nan-cf6d8dc5b69eda45.lock for /home/ruben/apps/print-my-map/node_modules/canvas/node_modules/nan
+383 verbose about to build /home/ruben/apps/print-my-map/node_modules/canvas
+384 info build /home/ruben/apps/print-my-map/node_modules/canvas
+385 info linkStuff canvas@1.2.7
+386 silly linkStuff canvas@1.2.7 has /home/ruben/apps/print-my-map/node_modules as its parent node_modules
+387 verbose linkBins canvas@1.2.7
+388 verbose linkMans canvas@1.2.7
+389 verbose rebuildBundles canvas@1.2.7
+390 verbose rebuildBundles [ 'nan' ]
+391 info install canvas@1.2.7
+392 verbose unsafe-perm in lifecycle true
+393 info canvas@1.2.7 Failed to exec install script
+394 verbose unlock done using /home/ruben/.npm/_locks/canvas-95642d1364481242.lock for /home/ruben/apps/print-my-map/node_modules/canvas
+395 verbose stack Error: canvas@1.2.7 install: `node-gyp rebuild`
+395 verbose stack Exit status 1
+395 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+395 verbose stack     at emitTwo (events.js:87:13)
+395 verbose stack     at EventEmitter.emit (events.js:172:7)
+395 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+395 verbose stack     at emitTwo (events.js:87:13)
+395 verbose stack     at ChildProcess.emit (events.js:172:7)
+395 verbose stack     at maybeClose (internal/child_process.js:763:16)
+395 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:210:5)
+396 verbose pkgid canvas@1.2.7
+397 verbose cwd /home/ruben/apps/print-my-map
+398 error Linux 3.13.0-57-generic
+399 error argv "/usr/local/bin/iojs" "/usr/local/bin/npm" "install" "canvas" "--save"
+400 error node v2.2.1
+401 error npm  v2.11.0
+402 error code ELIFECYCLE
+403 error canvas@1.2.7 install: `node-gyp rebuild`
+403 error Exit status 1
+404 error Failed at the canvas@1.2.7 install script 'node-gyp rebuild'.
+404 error This is most likely a problem with the canvas package,
+404 error not with npm itself.
+404 error Tell the author that this fails on your system:
+404 error     node-gyp rebuild
+404 error You can get their info via:
+404 error     npm owner ls canvas
+404 error There is likely additional logging output above.
+405 verbose exit [ 1, true ]
+406 verbose unbuild node_modules/canvas
+407 info preuninstall canvas@1.2.7
+408 info uninstall canvas@1.2.7
+409 verbose unbuild rmStuff canvas@1.2.7 from /home/ruben/apps/print-my-map/node_modules
+410 info postuninstall canvas@1.2.7
+411 silly gentlyRm /home/ruben/apps/print-my-map/node_modules/canvas is being purged from base /home/ruben/apps/print-my-map
+412 verbose gentlyRm don't care about contents; nuking /home/ruben/apps/print-my-map/node_modules/canvas
+413 silly vacuum-fs purging /home/ruben/apps/print-my-map/node_modules/canvas
+414 silly vacuum-fs quitting because other entries in /home/ruben/apps/print-my-map/node_modules

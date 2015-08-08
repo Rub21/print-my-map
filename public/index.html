@@ -9,15 +9,25 @@
         <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />
         <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
         <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
+        <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
         <link href='css/site.css' rel='stylesheet'>
     </head>
     <body>
         <div id='map'></div>
         <div id='coordinates'></div>
         <div id= "maps"></div>
-        <button id="butto_imagen">Imagen</button>
-       <canvas id="canvas"></canvas>
-        <script src="app.js"></script>
-       <script src="bundle.js"></script>
-    </body>
+        <!--         <button id="butto_imagen">Imagen</button> -->
+       <!--   <canvas id="canvas_result"></canvas> -->
+        <canvas id="canvas"></canvas>
+
+    </div>
+    <div class="col6 pad2 ts">
+        <div class="pill">
+            <a  id="butto_imagen"class="button pad2x quiet">Get Imagen</a>
+            <a  id="download_imagen" class="button pad2x quiet">Download</a>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="bundle.js"></script>
+</body>
 </html>
