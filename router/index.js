@@ -29,47 +29,45 @@ var mount = st({
 router.post('/process', function(req, res) {
 	jsonbody(req, res, function(err, body) {
 		if (err) return fail(err, res);
-		var json = body.json;
-		var zoom = json.properties.zoom;
+		var geojson = body.json;
+		var zoom = geojson.properties.zoom;
 		var limits = {
 			min_zoom: zoom,
 			max_zoom: zoom
 		}
-
-		var tiles = tilecover.tiles(json.geometry, limits);
-		var json_tiles = tilecover.geojson(json.geometry, limits);
+		var tiles = tilecover.tiles(geojson.geometry, limits); //num tiles in geojson
+		var json_tiles = tilecover.geojson(geojson.geometry, limits); //geojson from each tile in geojson
 
 		var obj_tiles = {
-			mapid: json.properties.mapid,
-			token: json.properties.token,
+			mapid: geojson.properties.mapid,
+			token: geojson.properties.token,
 			tiles: tiles
 		}
 
-		var height_width_geo = measure(json);
+		var hw_geojson = measure(geojson); //altura y ancho del geojson
 		var geojson_tiles = t.bboxPolygon(t.extent(json_tiles));
-		var height_width_geo_tiles = measure(geojson_tiles).reverse();
-
+		var hw_tiles = measure(geojson_tiles).reverse(); //altura y ancho de los tiles
 
 		//para las dimenciones que hace falta cortar
+		fs.writeFile('geojson.js', JSON.stringify(geojson));
+		fs.writeFile('geojson_tiles.js', JSON.stringify(geojson_tiles));
 
-		var p1 = t.point(json.geometry.coordinates[0][0]);
-		var p2 = t.point(geojson_tiles.geometry.coordinates[0][0])
+		var p1 = t.point(geojson.geometry.coordinates[0][1]);
+		var p2 = t.point(geojson_tiles.geometry.coordinates[0][3])
 		var input = {
 			"type": "FeatureCollection",
 			"features": []
 		}
 		input.features.push(p1);
 		input.features.push(p2);
-		var bbox = t.extent(input);
-		var height_width_nim_poly = measure(t.bboxPolygon(bbox));
-
-		fs.appendFile('json_tiles.js', JSON.stringify(t.bboxPolygon(bbox)));
-
-		console.log(height_width_geo)
-		console.log(height_width_geo_tiles)
-		console.log(height_width_nim_poly)
-
-		helper.converttiles(obj_tiles, height_width_geo, height_width_geo_tiles, height_width_nim_poly);
+		var bbox = t.extent(input);		
+		var hw_diff = measure(t.bboxPolygon(bbox)).reverse();
+		fs.writeFile('diff.js', JSON.stringify(t.bboxPolygon(bbox)));
+		//fs.appendFile('json_tiles.js', JSON.stringify(t.bboxPolygon(bbox)));
+		console.log('Size tiles ' + hw_tiles)
+		console.log('Size geojson ' + hw_geojson)
+		console.log('Size diff ' + hw_diff)
+		helper.converttiles(obj_tiles, hw_geojson, hw_tiles, hw_diff);
 	});
 
 
@@ -94,6 +92,5 @@ function fail(err, res) {
 	res.setHeader('Content-Type', 'text/plain');
 	res.end(err.message);
 }
-
 
 module.exports = onRequest

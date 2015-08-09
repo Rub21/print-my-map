@@ -20,8 +20,6 @@ module.exports = function(poly) {
 			}
 		};
 		hw.push(t.distance(point1, point2, 'kilometers'));
-
 	};
-
 	return hw;
 }

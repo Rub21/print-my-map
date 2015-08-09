@@ -1,7 +1,7 @@
 var easyimg = require('easyimage');
 
 
-var info = easyimg.info('./test.png').then(
+var info = easyimg.info('./result.png').then(
 	function(image) {
 		console.log(+image.width + ' x ' + image.height);
 	},
@@ -12,14 +12,15 @@ var info = easyimg.info('./test.png').then(
 
 
 easyimg.rescrop({
-	src: 'test.png',
-	dst: './output/thumbnail.jpg',
-	width: 500,
-	height: 500,
-	cropwidth: 128,
-	cropheight: 128,
-	x: 50,
-	y: 23
+	src: 'result.png',
+	dst: 'thumbnail2.jpg',
+	width: 512,
+	height: 1024,
+	cropwidth: 389,
+	cropheight: 598,
+	gravity: 'North',
+	x: 40,
+	y: 253
 }).then(
 	function(image) {
 		console.log('Resized and cropped: ' + image.width + ' x ' + image.height);
@@ -28,3 +29,7 @@ easyimg.rescrop({
 		console.log(err);
 	}
 );
+
+// 512 x 1024
+// 388.98237095692286 x 598.0014060823784
+// 39.99818724551762 x 252.99426694502588
