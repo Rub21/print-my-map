@@ -1,9 +1,8 @@
-var mapid = 'ruben.m3ag4lf8';
-var token = 'pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmHeqqvtFdYig';
+var mapid = 'ruben.lg5gcamb'; //'bobbysud.79c006a5';
+var token = 'pk.eyJ1IjoicnViZW4iLCJhIjoiYlBrdkpRWSJ9.JgDDxJkvDn3us36aGzR6vg';
 L.mapbox.accessToken = token;
-
-var map = L.mapbox.map('map', mapid)
-    .setView([38.88995, -77.00906], 15);
+var host = 'localhost';
+var map = L.mapbox.map('map', mapid);
 
 var geojson = {
     "type": "Feature",
@@ -15,7 +14,6 @@ var geojson = {
     "geometry": {}
 };
 
-var host = 'localhost';
 var hash = L.hash(map);
 var featureGroup = L.featureGroup().addTo(map);
 var drawControl = new L.Control.Draw({
@@ -46,9 +44,7 @@ var drawControl = new L.Control.Draw({
 map.on('draw:created', function(e) {
     var layer = e.layer;
     featureGroup.addLayer(layer);
-
     geojson.geometry = e.layer.toGeoJSON().geometry;
-
     geojson.properties.mapid = mapid;
     geojson.properties.token = token;
     geojson.properties.zoom = map.getZoom();
@@ -61,3 +57,13 @@ map.on('zoomend', function() {
     console.log(geojson);
     document.getElementById('coordinates').innerHTML = JSON.stringify(geojson);
 });
+document.getElementById("map_id").defaultValue = mapid;
+
+map_id = document.getElementById('map_id');
+map_id.addEventListener('input', function(e) {
+    e.preventDefault();
+  //  document.getElementById("map").innerHTML = '';
+    mapid = map_id.value;
+    geojson.properties.mapid = mapid;
+    L.mapbox.tileLayer(mapid).addTo(map);
+}, false);

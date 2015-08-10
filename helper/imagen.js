@@ -14,7 +14,7 @@ var easyimg = require('easyimage');
 
 var folder = os.tmpDir();
 //var folder = os.tmpDir();
-module.exports = function(obj_tiles, hw_geojson, hw_tiles, hw_diff) {
+module.exports = function(res, obj_tiles, hw_geojson, hw_tiles, hw_diff) {
 
 
 	function download_img() { //done=callback
@@ -61,7 +61,7 @@ module.exports = function(obj_tiles, hw_geojson, hw_tiles, hw_diff) {
 			};
 			query_vertical = query_vertical + ' ' + folder + '/' + 'result.png'
 			var convert = query + ' && ' + query_vertical + ' && ' + rm_img;
-			console.log(tiles.length + '--' + 250 * tiles.length)
+			console.log(tiles.length)
 			setTimeout(function() {
 				exec(convert, function(err, stdout, stderr) {
 					var info = easyimg.info(folder + '/result.png').then(
@@ -73,9 +73,6 @@ module.exports = function(obj_tiles, hw_geojson, hw_tiles, hw_diff) {
 							var w_diff = image.width / hw_tiles[1] * hw_diff[1];
 							var h_diff = image.height / hw_tiles[0] * hw_diff[0];
 
-							// console.log(image.width + ' x ' + image.height);
-							// console.log(w_geojson + ' x ' + h_geojson);
-							// console.log(w_diff + ' x ' + h_diff);
 							easyimg.rescrop({
 								src: folder + '/result.png',
 								dst: folder + '/result-crop.png',
@@ -88,7 +85,10 @@ module.exports = function(obj_tiles, hw_geojson, hw_tiles, hw_diff) {
 								y: h_diff
 							}).then(
 								function(image) {
-									console.log('Resized and cropped: ' + image.width + ' x ' + image.height);
+									fs.readFile(folder + '/result-crop.png', function(err, data) {
+										var base64data = new Buffer(data).toString('base64');
+										res.end(base64data);
+									});
 								},
 								function(err) {
 									console.log(err);
@@ -99,7 +99,7 @@ module.exports = function(obj_tiles, hw_geojson, hw_tiles, hw_diff) {
 							console.log(err);
 						});
 				});
-			}, 250 * tiles.length)
+			}, 500)
 
 		}
 	}

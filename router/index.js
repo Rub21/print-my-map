@@ -49,8 +49,8 @@ router.post('/process', function(req, res) {
 		var hw_tiles = measure(geojson_tiles).reverse(); //altura y ancho de los tiles
 
 		//para las dimenciones que hace falta cortar
-		fs.writeFile('geojson.js', JSON.stringify(geojson));
-		fs.writeFile('geojson_tiles.js', JSON.stringify(geojson_tiles));
+		// fs.writeFile('geojson.js', JSON.stringify(geojson));
+		// fs.writeFile('geojson_tiles.js', JSON.stringify(geojson_tiles));
 
 		var p1 = t.point(geojson.geometry.coordinates[0][1]);
 		var p2 = t.point(geojson_tiles.geometry.coordinates[0][3])
@@ -60,14 +60,17 @@ router.post('/process', function(req, res) {
 		}
 		input.features.push(p1);
 		input.features.push(p2);
-		var bbox = t.extent(input);		
+		var bbox = t.extent(input);
 		var hw_diff = measure(t.bboxPolygon(bbox)).reverse();
-		fs.writeFile('diff.js', JSON.stringify(t.bboxPolygon(bbox)));
+		//fs.writeFile('diff.js', JSON.stringify(t.bboxPolygon(bbox)));
 		//fs.appendFile('json_tiles.js', JSON.stringify(t.bboxPolygon(bbox)));
-		console.log('Size tiles ' + hw_tiles)
-		console.log('Size geojson ' + hw_geojson)
-		console.log('Size diff ' + hw_diff)
-		helper.converttiles(obj_tiles, hw_geojson, hw_tiles, hw_diff);
+		// console.log('Size tiles ' + hw_tiles)
+		// console.log('Size geojson ' + hw_geojson)
+		// console.log('Size diff ' + hw_diff)
+		helper.converttiles(res, obj_tiles, hw_geojson, hw_tiles, hw_diff);
+		// res.end(JSON.stringify({
+		// 	imgen: 'img'
+		// }));
 	});
 
 
